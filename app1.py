@@ -27,18 +27,20 @@ root.geometry("300x400")
 entry = tk.Entry(root, font=("Arial", 18), bd=5, relief=tk.RIDGE, justify='right')
 entry.pack(fill=tk.BOTH, ipadx=8, ipady=15, padx=10, pady=10)
 
-# Buttons layout
+# Buttons layout (with decimal support)
 buttons = [
     ['7','8','9','/'],
     ['4','5','6','*'],
     ['1','2','3','-'],
-    ['0','C','=','+']
+    ['0','.','=','+'],
+    ['C']
 ]
 
 # Create buttons
 for row in buttons:
     frame = tk.Frame(root)
     frame.pack(expand=True, fill="both")
+
     for btn in row:
         if btn == '=':
             action = calculate
